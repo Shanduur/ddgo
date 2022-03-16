@@ -1,7 +1,5 @@
 #!/bin/bash
 
-tree / | grep go
-
 nohup /usr/local/bin/dockerd-entrypoint.sh > dockerd.log 2>&1 &
 
 while [ true ]; do
@@ -21,7 +19,5 @@ if [ ! -z "${ADDITIONAL_DEPS}" ]; then
 fi
 
 git clone ${GIT_REPO} work
-
-cd work
 
 go test ${TEST_ARGS} ./...
