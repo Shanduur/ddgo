@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: publish
-  image: plugins/docker
+  image: thegeeklab/drone-docker-buildx
   privileged: true
   volumes:
   - name: docker
