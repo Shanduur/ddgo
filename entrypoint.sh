@@ -14,5 +14,8 @@ while [ true ]; do
     fi
 done;
 
-go version
-docker version
+git clone ${GIT_REPO} -o work
+
+cd work
+
+go test ${TEST_ARGS} 
