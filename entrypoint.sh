@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tree /
+tree / | grep go
 
 nohup /usr/local/bin/dockerd-entrypoint.sh > dockerd.log 2>&1 &
 
