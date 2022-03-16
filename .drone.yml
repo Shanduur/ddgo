@@ -11,7 +11,7 @@ steps:
   image: plugins/docker
   settings:
     repo: shanduur/ddgo
-    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
+    auto_tag: true
     username:
       from_secret: docker_username
     password:
