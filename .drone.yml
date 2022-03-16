@@ -14,9 +14,7 @@ steps:
   - name: docker
     path: /var/run/docker.sock
   debug: true
-  platforms:
-  - linux/arm64
-  - linux/amd64
+  platforms: linux/arm64,linux/amd64
   settings:
     repo: shanduur/ddgo
     auto_tag: true
