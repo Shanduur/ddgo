@@ -1,5 +1,7 @@
 #!/bin/bash
 
+tree /
+
 nohup /usr/local/bin/dockerd-entrypoint.sh > dockerd.log 2>&1 &
 
 while [ true ]; do

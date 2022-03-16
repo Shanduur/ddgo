@@ -1,6 +1,6 @@
 FROM docker:dind
 
-RUN apk add --no-cache bash git
+RUN apk add --no-cache bash git tree
 
 ENV GOROOT "/go/.go"
 ENV GOPATH "/go/go"
