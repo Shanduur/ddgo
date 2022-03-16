@@ -13,11 +13,12 @@ steps:
   volumes:
   - name: docker
     path: /var/run/docker.sock
-  debug: true
-  platforms: linux/arm64,linux/amd64
   settings:
+    platforms:
+      - linux/arm64
+      - linux/amd64
     repo: shanduur/ddgo
-    auto_tag: true
+    tags: [ "${DRONE_COMMIT_SHA:0:7}", "latest" ]
     username:
       from_secret: docker_username
     password:
