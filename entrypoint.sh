@@ -14,12 +14,12 @@ while [ true ]; do
     fi
 done;
 
-if [ ! -z ${ADDITIONAL_DEPS} ]; then
-    apk add --no-cahce ${ADDITIONAL_DEPS}
+if [ ! -z "${ADDITIONAL_DEPS}" ]; then
+    apk add --no-cache ${ADDITIONAL_DEPS}
 fi
 
 git clone ${GIT_REPO} work
 
 cd work
 
-go test ${TEST_ARGS} ./...
+${GO_OPTS} go test ${TEST_ARGS} ./...
