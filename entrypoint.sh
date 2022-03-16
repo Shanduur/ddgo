@@ -14,6 +14,10 @@ while [ true ]; do
     fi
 done;
 
+if [ ! -z ${ADDITIONAL_DEPS} ]; then
+    apk add --no-cahce ${ADDITIONAL_DEPS}
+fi
+
 git clone ${GIT_REPO} work
 
 cd work
