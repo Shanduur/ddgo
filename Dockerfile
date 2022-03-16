@@ -2,9 +2,12 @@ FROM docker:dind
 
 RUN apk add --no-cache bash git
 
+ENV GOROOT "/go/.go"
+ENV GOPATH "/go/go"
+
 RUN wget -qO- https://git.io/g-install | sh -s -- bash -y
 
-ENV PATH="/root/go/bin:$PATH"
+ENV PATH="/go/go/bin:$PATH"
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 0774 /usr/local/bin/entrypoint.sh

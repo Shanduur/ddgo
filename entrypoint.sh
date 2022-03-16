@@ -22,6 +22,4 @@ git clone ${GIT_REPO} work
 
 cd work
 
-ls -al /root/go/bin
-
-/root/go/bin/go test ${TEST_ARGS} ./...
+go test ${TEST_ARGS} ./...
