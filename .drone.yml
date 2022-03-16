@@ -10,6 +10,7 @@ steps:
 - name: publish
   image: plugins/docker
   privileged: true
+  debug: true
   settings:
     repo: shanduur/ddgo
     auto_tag: true
