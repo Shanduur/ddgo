@@ -18,6 +18,6 @@ if [ ! -z "${ADDITIONAL_DEPS}" ]; then
     apk add --no-cache ${ADDITIONAL_DEPS}
 fi
 
-git clone ${GIT_REPO} work
+git clone ${GIT_REPO} work && cd work
 
 go test ${TEST_ARGS} ./...
