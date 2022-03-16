@@ -14,8 +14,8 @@ while [ true ]; do
     fi
 done;
 
-git clone ${GIT_REPO} -o work
+git clone ${GIT_REPO} work
 
 cd work
 
-go test ${TEST_ARGS} 
+go test ${TEST_ARGS} ./...

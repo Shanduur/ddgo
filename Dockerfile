@@ -1,6 +1,6 @@
 FROM docker:dind
 
-RUN apk add bash
+RUN apk add --no-cache bash git
 
 RUN wget -qO- https://git.io/g-install | sh -s -- bash -y
 
