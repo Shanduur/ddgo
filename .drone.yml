@@ -15,7 +15,7 @@ platform:
 steps:
 - name: publish
   image: thegeeklab/drone-docker-buildx
-  # privileged: true
+  privileged: true
   # volumes:
   # - name: docker
   #   path: /var/run/docker.sock
