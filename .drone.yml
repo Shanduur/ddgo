@@ -6,11 +6,6 @@ platform:
   os: linux
   arch: arm64
 
-trigger:
-  ref:
-  - refs/heads/main
-  - refs/tags/**
-
 steps:
 - name: publish
   image: thegeeklab/drone-docker-buildx
