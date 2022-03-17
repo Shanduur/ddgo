@@ -10,7 +10,6 @@ trigger:
   ref:
   - refs/heads/main
   - refs/tags/**
-  - refs/pull/**
 
 steps:
 - name: publish
