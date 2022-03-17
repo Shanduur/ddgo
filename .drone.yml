@@ -6,11 +6,11 @@ platform:
   os: linux
   arch: arm64
 
-trigger:
-  event:
-    include:
-    - push
-    - pull_request
+# trigger:
+#   event:
+#     include:
+#     - push
+#     - pull_request
 
 steps:
 - name: publish
@@ -31,9 +31,9 @@ steps:
       from_secret: docker_password
 
 services:
-  - name: dind
-    image: docker:dind
-    privileged: true
+- name: dind
+  image: docker:dind
+  privileged: true
 
 # volumes:
 # - name: docker
