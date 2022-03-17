@@ -6,13 +6,19 @@ platform:
   os: linux
   arch: arm64
 
+trigger:
+  event:
+    include:
+    - push
+    - pull_request
+
 steps:
 - name: publish
   image: thegeeklab/drone-docker-buildx
-  privileged: true
-  volumes:
-  - name: docker
-    path: /var/run/docker.sock
+  # privileged: true
+  # volumes:
+  # - name: docker
+  #   path: /var/run/docker.sock
   settings:
     platforms:
       - linux/arm64
@@ -24,8 +30,13 @@ steps:
     password:
       from_secret: docker_password
 
-volumes:
-- name: docker
-  host:
-    path: /var/run/docker.sock
+services:
+  - name: dind
+    image: docker:dind
+    privileged: true
+
+# volumes:
+# - name: docker
+#   host:
+#     path: /var/run/docker.sock
 
