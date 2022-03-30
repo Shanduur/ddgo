@@ -20,4 +20,6 @@ fi
 
 git clone ${GIT_REPO} work && cd work
 
-go test ${TEST_ARGS} ./...
+go test ${TEST_ARGS} -covermode=atomic -coverprofile=coverage.out ./...
+
+codecov -t ${CODECOV_TOKEN}
