@@ -1,6 +1,6 @@
 FROM docker:dind
 
-RUN apk add --no-cache bash git go
+RUN apk add --no-cache bash curl git go
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 0774 /usr/local/bin/entrypoint.sh
