@@ -6,6 +6,12 @@ platform:
   os: linux
   arch: arm64
 
+trigger:
+  event:
+    include:
+    - push
+    - pull_request
+
 steps:
 - name: publish
   image: thegeeklab/drone-docker-buildx
