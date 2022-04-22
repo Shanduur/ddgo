@@ -7,15 +7,9 @@ platform:
   arch: arm64
 
 trigger:
-  branch:
-    - main
-  event:
-    - push
-    - cron
-    - custom
-  cron:
-    include:
-      - daily
+  ref:
+    - refs/heads/main
+    - refs/tags/**
 
 steps:
   - name: publish
