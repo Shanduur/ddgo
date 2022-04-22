@@ -8,21 +8,20 @@ platform:
 
 trigger:
   event:
-    include:
     - push
     - pull_request
 
 steps:
-- name: publish
-  image: thegeeklab/drone-docker-buildx
-  privileged: true
-  settings:
-    platforms:
-      - linux/arm64
-      - linux/amd64
-    repo: shanduur/ddgo
-    tags: [ "${DRONE_COMMIT_SHA:0:7}", "latest" ]
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+  - name: publish
+    image: thegeeklab/drone-docker-buildx
+    privileged: true
+    settings:
+      platforms:
+        - linux/arm64
+        - linux/amd64
+      repo: shanduur/ddgo
+      tags: [ "${DRONE_COMMIT_SHA:0:7}", "latest" ]
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
