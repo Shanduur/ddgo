@@ -1,6 +1,8 @@
 FROM docker:dind
+COPY --from=golang:alpine /usr/local/go/ /usr/local/go/
+ENV PATH="/usr/local/go/bin:${PATH}"
 
-RUN apk add --no-cache bash curl git go
+RUN apk add --no-cache bash curl git
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 0774 /usr/local/bin/entrypoint.sh
