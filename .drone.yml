@@ -6,6 +6,17 @@ platform:
   os: linux
   arch: arm64
 
+trigger:
+  branch:
+    - main
+  event:
+    - push
+    - cron
+    - custom
+  cron:
+    include:
+      - daily
+
 steps:
   - name: publish
     image: thegeeklab/drone-docker-buildx
