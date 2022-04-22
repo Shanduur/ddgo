@@ -7,9 +7,9 @@ platform:
   arch: arm64
 
 trigger:
-  event:
-    - push
-    - pull_request
+  ref:
+    - refs/heads/main
+    - refs/tags/**
 
 steps:
   - name: publish
