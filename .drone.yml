@@ -9,6 +9,9 @@ platform:
 steps:
   - name: publish
     image: thegeeklab/drone-docker-buildx
+    volumes:
+      - name: dockersock
+        path: /var/run
     privileged: true
     settings:
       platforms:
@@ -20,3 +23,15 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+
+services:
+- name: docker
+  image: docker:dind
+  privileged: true
+  volumes:
+  - name: dockersock
+    path: /var/run
+
+volumes:
+- name: dockersock
+  temp: {}
